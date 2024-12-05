@@ -1,14 +1,15 @@
-import{ ReactNode } from "react";
+import { ReactNode } from "react";
 
-type ErrorMessageProps = {
+type MensajeErrorProps = {
     children: ReactNode
 }
 
-export default function ErrorMessage({children} : ErrorMessageProps){
-    return(   
+export default function MensajeError({ children }: MensajeErrorProps) {
+    return (
         <p className="bg-red-600 p-2 text-white font-bold text-sm text-center">
             {children}
         </p>
     )
 }
+
 

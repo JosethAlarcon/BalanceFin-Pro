@@ -1,45 +1,44 @@
 import { useEffect, useMemo } from "react"
-import BudgetForm from "./components/BudgetForm"
-import { usarBudget } from "./hooks/useBudget"
-import BudgetTraker from "./components/BudgetTraker"
-import ExpenseModal from "./components/ExpenseModal"
-import ExpenseList from "./components/ExpenseList"
-import FilterByCategory from "./components/FilterByCategory"
+import FormularioPresupuesto from "./components/FormularioPresupuesto"
+import { usarPresupuesto } from "./hooks/usePresupuesto"
+import SeguimientoPresupuesto from "./components/RastreadorPresupuesto"
+import ModalGasto from "./components/ModalGasto"
+import ListaGastos from "./components/ListaGastos"
+import FiltrarPorCategoria from "./components/FiltrarPorCategoria"
 
 function App() {
 
-  const { state } = usarBudget()
+  const { estado } = usarPresupuesto()
 
-  const isValidBudget = useMemo(() => state.budget > 0 , [state.budget])
+  const presupuestoValido = useMemo(() => estado.presupuesto > 0 , [estado.presupuesto])
   
   useEffect(() => {
-    localStorage.setItem('budget', state.budget.toString())
-    localStorage.setItem('expenses', JSON.stringify(state.expenses))
-  }, [state])
+    localStorage.setItem('presupuesto', estado.presupuesto.toString())
+    localStorage.setItem('gastos', JSON.stringify(estado.gastos))
+  }, [estado])
 
   return (
     <>
       <header className="bg-blue-600 py-8 max-h-72">
         <h1 className="uppercase text-center font-black text-4xl text-white">
-          Panificador de Gastos
-          </h1>
+          Planificador de Gastos
+        </h1>
       </header>
 
       <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg mt-10 p-10">
-        {isValidBudget ? <BudgetTraker/> : <BudgetForm />}
+        {presupuestoValido ? <SeguimientoPresupuesto/> : <FormularioPresupuesto />}
       </div>
 
-      {isValidBudget && (
+      {presupuestoValido && (
         <main className="max-w-3xl mx-auto py-10">
-            <FilterByCategory />
-            <ExpenseModal />
-            <ExpenseList />
+            <FiltrarPorCategoria />
+            <ModalGasto />
+            <ListaGastos />
         </main>
-        
       )}
-      
     </>
   )
 }
 
 export default App
+

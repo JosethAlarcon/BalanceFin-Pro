@@ -1,14 +1,14 @@
-export  function formatCurrency(amount: number){
-    return new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(amount)
+export function formatearMoneda(monto: number) {
+    return new Intl.NumberFormat('es-ES', {style: 'currency', currency: 'EUR'}).format(monto)
 }
 
-export function formatDate(dateStr: string) : string {
-    const dateObj = new Date(dateStr)
-    const options : Intl.DateTimeFormatOptions = {
+export function formatearFecha(fechaStr: string): string {
+    const fechaObj = new Date(fechaStr)
+    const opciones: Intl.DateTimeFormatOptions = {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
         day: 'numeric'
     }
-    return new Intl.DateTimeFormat('es-ES', options).format(dateObj)
+    return new Intl.DateTimeFormat('es-ES', opciones).format(fechaObj)
 }

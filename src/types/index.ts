@@ -1,19 +1,19 @@
-export type Expense = {
+export type Gasto = {
     id: string
-    expenseName: string
-    amount: number
-    category: string
-    date: Value
+    nombreGasto: string
+    monto: number
+    categoria: string
+    fecha: Valor
 }
 
-export type DraftExpense = Omit<Expense, 'id'>
+export type GastoBorrador = Omit<Gasto, 'id'>
 
-export type ValuePiece = Date | null;
+export type PiezaValor = Date | null;
 
-export type Value = ValuePiece | [ValuePiece, ValuePiece];
+export type Valor = PiezaValor | [PiezaValor, PiezaValor];
 
-export type Category = {
+export type Categoria = {
     id: string
-    name: string
-    icon: string
+    nombre: string
+    icono: string
 }

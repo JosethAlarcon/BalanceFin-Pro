@@ -1,12 +1,12 @@
-import type { Category } from "../types";
+import type { Categoria } from "../types";
 
-export const categorias : Category[] = [
-    { id: '1', name: 'Ahorro', icon: 'ahorro' },
-    { id: '2', name: 'Comida', icon: 'comida' },
-    { id: '3', name: 'Casa', icon: 'casa' },
-    { id: '4', name: 'Gastos Varios', icon: 'gastos' },
-    { id: '5', name: 'Ocio', icon: 'ocio' },
-    { id: '6', name: 'Salud', icon: 'salud' },
-    { id: '7', name: 'Suscripciones', icon: 'suscripciones' },
-    { id: '8', name: 'Servicios Basicos', icon: 'servicios' },
-  ];
+export const categorias: Categoria[] = [
+    { id: '1', nombre: 'Ahorro', icono: 'ahorro' },
+    { id: '2', nombre: 'Comida', icono: 'comida' },
+    { id: '3', nombre: 'Casa', icono: 'casa' },
+    { id: '4', nombre: 'Gastos Varios', icono: 'gastos' },
+    { id: '5', nombre: 'Ocio', icono: 'ocio' },
+    { id: '6', nombre: 'Salud', icono: 'salud' },
+    { id: '7', nombre: 'Suscripciones', icono: 'suscripciones' },
+    { id: '8', nombre: 'Servicios Básicos', icono: 'servicios' },
+];
