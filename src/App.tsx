@@ -1,6 +1,6 @@
-import { useState } from "react";
-import Registro from "./components/Registro";
-import Login from "./components/Login";
+// import { useState } from "react";
+// import Registro from "./components/Registro";
+// import Login from "./components/Login";
 import FormularioPresupuesto from "./components/FormularioPresupuesto";
 import SeguimientoPresupuesto from "./components/RastreadorPresupuesto";
 import ModalGasto from "./components/ModalGasto";
@@ -11,12 +11,12 @@ import { usarPresupuesto } from "./hooks/usePresupuesto";
 //Aqui comienza la aplicacion, desde aqui se llama a los componentes
 
 function App() {
-  const [currentView, setCurrentView] = useState<"registro" | "login" | "dashboard">("registro");
+  // const [currentView, setCurrentView] = useState<"registro" | "login" | "dashboard">("registro");
   const { estado } = usarPresupuesto();
   const presupuestoValido = estado.presupuesto > 0;
 
-  const handleRegistroExitoso = () => setCurrentView("login");
-  const handleLoginExitoso = () => setCurrentView("dashboard");
+  // const handleRegistroExitoso = () => setCurrentView("login");
+  // const handleLoginExitoso = () => setCurrentView("dashboard");
 
   return (
     <>
