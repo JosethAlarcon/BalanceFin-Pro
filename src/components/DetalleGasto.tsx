@@ -13,6 +13,8 @@ import { categorias } from "../data/categorias";
 import { usarPresupuesto } from "../hooks/usePresupuesto";
 import "react-swipeable-list/dist/styles.css";
 
+//Muestra el detalle de los gastos y los edita o elimina
+
 type DetalleGastoProps = {
     gasto: Gasto
 };
@@ -54,7 +56,7 @@ export default function DetalleGasto({ gasto }: DetalleGastoProps) {
                 leadingActions={accionesIniciales()}
                 trailingActions={accionesFinales()}
             >
-                <div className="bg-white shadow-lg p-5 w-full border-b border-gray-200 flex gap-5 items-center">
+                <div className="bg-white text-gray-800 shadow-lg p-5 w-full border-b border-gray-200 flex gap-5 items-center">
                     <div>
                         <img
                             src={`/icono_${informacionCategoria.icono}.svg`}

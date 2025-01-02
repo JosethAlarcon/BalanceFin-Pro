@@ -7,6 +7,8 @@ import 'react-date-picker/dist/DatePicker.css';
 import MensajeError from "./MensajeError";
 import { usarPresupuesto } from "../hooks/usePresupuesto";
 
+//Este formulario se encargar de recibir los datos de los gastos y procesarlos
+
 export default function FormularioGasto() {
 
     const [gasto, setGasto] = useState<GastoBorrador>({
@@ -86,7 +88,7 @@ export default function FormularioGasto() {
 
     return (
         <form className="space-y-5" onSubmit={manejarEnvio}>
-            <legend className="uppercase text-center text-2xl font-black border-b-4 border-blue-500 py-2">
+            <legend className="uppercase text-center text-2xl font-black border-b-4 border-yellow-500 py-2">
                 {estado.idEditando ? 'Guardar cambios' : 'Nuevo gasto'}
             </legend>
 
@@ -100,7 +102,7 @@ export default function FormularioGasto() {
                     type="text"
                     id="nombreGasto"
                     placeholder="Añade el nombre del gasto"
-                    className="bg-slate-100 p-2"
+                    className="bg-yellow-50 p-2"
                     name="nombreGasto"
                     value={gasto.nombreGasto}
                     onChange={manejarCambio}
@@ -115,7 +117,7 @@ export default function FormularioGasto() {
                     type="number"
                     id="monto"
                     placeholder="Añade la cantidad del gasto ej. 300"
-                    className="bg-slate-100 p-2"
+                    className="bg-yellow-50 p-2"
                     name="monto"
                     value={gasto.monto}
                     onChange={manejarCambio}
@@ -128,7 +130,7 @@ export default function FormularioGasto() {
                 </label>
                 <select
                     id="categoria"
-                    className="bg-slate-100 p-2"
+                    className="bg-yellow-50 p-2"
                     name="categoria"
                     onChange={manejarCambio}
                     value={gasto.categoria}
@@ -147,7 +149,7 @@ export default function FormularioGasto() {
                     Fecha del Gasto:
                 </label>
                 <DatePicker
-                    className="bg-slate-100 p-2 border-0"
+                    className="bg-yellow-50 p-2 border-0"
                     value={gasto.fecha}
                     onChange={manejarCambioFecha}
                 />
@@ -155,7 +157,7 @@ export default function FormularioGasto() {
 
             <input
                 type="submit"
-                className="bg-blue-600 cursor-pointer w-full p-2 text-white uppercase font-bold rounded-lg"
+                className="bg-yellow-600 cursor-pointer w-full p-2 text-white uppercase font-bold rounded-lg"
                 value={estado.idEditando ? 'Guardar cambios' : 'Registrar Gasto'}
             />
         </form>

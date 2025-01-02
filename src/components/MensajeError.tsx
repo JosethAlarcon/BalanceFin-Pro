@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+//Este codigo muestra un mensaje de error si se excede el presupuesto
+
 type MensajeErrorProps = {
     children: ReactNode
 }

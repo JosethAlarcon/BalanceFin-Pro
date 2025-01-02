@@ -1,5 +1,7 @@
 import type { Categoria } from "../types";
 
+//Estas son todas las categoria del formulario de gastos
+
 export const categorias: Categoria[] = [
     { id: '1', nombre: 'Ahorro', icono: 'ahorro' },
     { id: '2', nombre: 'Comida', icono: 'comida' },

@@ -1,6 +1,10 @@
 import { v4 as uuidv4 } from 'uuid'
 import { Categoria, GastoBorrador, Gasto } from "../types"
 
+//El reductor maneja todos los "Estados" y las "Funciones"
+
+
+//Acciones que puede hacer nuestra aplicacion
 export type AccionesPresupuesto =
     {type: 'agregar-presupuesto', payload: {presupuesto: number}} |
     {type: 'mostrar-modal'} |
@@ -12,6 +16,7 @@ export type AccionesPresupuesto =
     {type: 'reiniciar-app'} |
     {type: 'agregar-filtro-categoria', payload: {id: Categoria['id']}}
 
+//Determina como debe estar el estado del presupuesto
 export type EstadoPresupuesto = {
     presupuesto: number
     modal: boolean

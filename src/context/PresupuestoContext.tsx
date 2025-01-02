@@ -1,6 +1,8 @@
 import { useReducer, createContext, Dispatch, ReactNode, useMemo } from "react";
 import { AccionesPresupuesto, ReducirPresupuesto, EstadoPresupuesto, estadoInicial } from "../reducers/reductores-presupuesto";
 
+//El context maneja el estado y el despachar de manera global para que se pueda acceder desde los componentes
+
 type ContextoPresupuestoProps = {
     estado: EstadoPresupuesto
     despachar: Dispatch<AccionesPresupuesto>

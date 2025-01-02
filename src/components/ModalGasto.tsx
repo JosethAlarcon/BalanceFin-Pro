@@ -4,6 +4,8 @@ import { Dialog, Transition } from '@headlessui/react';
 import { usarPresupuesto } from '../hooks/usePresupuesto';
 import FormularioGasto from './FormularioGasto';
 
+//Este codigo permite agregar nuevos gastos, es la logica del "+" en la parte inferior derecha
+
 export default function ModalGasto() {
 
     const { estado, despachar } = usarPresupuesto();
@@ -15,7 +17,7 @@ export default function ModalGasto() {
                     type="button"
                     onClick={() => despachar({ type: 'mostrar-modal' })}
                 >
-                    <PlusCircleIcon className='w-16 h-16 text-blue-600 rounded-full' />
+                    <PlusCircleIcon className='w-16 h-16 text-green-600 rounded-full' />
                 </button>
             </div>
 

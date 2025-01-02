@@ -3,6 +3,8 @@ import { usarPresupuesto } from "../hooks/usePresupuesto";
 import MostrarMonto from "./MostrarMonto";
 import "react-circular-progressbar/dist/styles.css";
 
+//Este codigo se encarga de llenar la grafica y resetear la aplicacion
+
 export default function RastreadorPresupuesto() {
     const { estado, gastosTotales, presupuestoRestante, despachar } = usarPresupuesto();
 
@@ -14,9 +16,9 @@ export default function RastreadorPresupuesto() {
                 <CircularProgressbar
                     value={porcentaje}
                     styles={buildStyles({
-                        pathColor: porcentaje === 100 ? '#DC2626' : '#3b82f6',
-                        trailColor: '#f5f5f5',
-                        textColor: porcentaje === 100 ? '#DC2626' : '#3b82f6',
+                        pathColor: porcentaje === 100 ? '#DC2626' : '#00bb0c',
+                        trailColor: '#ffeb99',
+                        textColor: porcentaje === 100 ? '#DC2626' : '#00bb0c',
                         textSize: 10,
                     })}
                     text={`${porcentaje}% Gastado`}
@@ -26,7 +28,7 @@ export default function RastreadorPresupuesto() {
             <div className="flex flex-col justify-center items-center gap-8">
                 <button
                     type="button"
-                    className="bg-pink-600 w-full p-2 text-white uppercase font-bold rounded-lg"
+                    className="bg-yellow-400 w-full p-2 text-white uppercase font-bold rounded-lg"
                     onClick={() => despachar({ type: 'reiniciar-app' })}
                 >
                     Reiniciar App

@@ -1,5 +1,7 @@
 import { formatearMoneda } from "./helpers"
 
+//Este codigo tipea la moneda y la formatea
+
 type MostrarMontoProps = {
     etiqueta?: string
     monto: number
@@ -7,9 +9,9 @@ type MostrarMontoProps = {
 
 export default function MostrarMonto({ etiqueta, monto }: MostrarMontoProps) {
     return (
-        <p className="text-2xl text-blue-600 font-bold">
+        <p className="text-2xl text-green-600 font-bold">
             {etiqueta && `${etiqueta}: `}
-            <span className="font-black text-black">{formatearMoneda(monto)}</span>
+            <span className="font-black text-gray-700">{formatearMoneda(monto)}</span>
         </p>
     )
 }

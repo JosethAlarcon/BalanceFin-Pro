@@ -2,6 +2,8 @@ import { useMemo } from "react";
 import { usarPresupuesto } from "../hooks/usePresupuesto";
 import DetalleGasto from "./DetalleGasto";
 
+//Este codigo hace que se muestren los gastos
+
 export default function ListaGastos() {
 
     const { estado } = usarPresupuesto();
@@ -14,12 +16,12 @@ export default function ListaGastos() {
     return (
         <div className="mt-10 bg-white shadow-lg rounded-lg p-10">
             {estaVacio ? (
-                <p className="text-gray-600 text-2xl font-bold">
+                <p className="text-green-600 text-2xl font-bold">
                     No hay gastos
                 </p>
             ) : (
                 <>
-                    <p className="text-gray-600 text-2xl font-bold my-5">
+                    <p className="text-green-600 text-2xl font-bold my-5">
                         Listado de gastos
                     </p>
                     {gastosFiltrados.map(gasto => (
